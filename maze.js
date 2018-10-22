@@ -28,3 +28,24 @@
 //});
 //
 
+window.onload = function() {
+    $("start").onmouseover = startHover;
+    $("end").onmouseover = overEnd;
+    $("maze").onmouseleave = Cheatproof;
+    var gardenWalls = $$("div#maze div.boundary");
+    for (var i = 0; i<gardenWalls.length; i++) {
+        gardenWalls[i].onmouseover = overTheGardenWalls;
+        gardenWalls[i].onmousleave = overTheGardenWalls;
+    }
+};
+
+function overTheGardenWalls() { //cause why not call it that.
+    var gWalls = document.getElementsByClassName("boundary");
+
+    for (var i=0;i<x.length; i++) {
+        gWalls[i].style.backgroundColor = "red";
+        if (gWalls[i].style.backgroundColor == "red") {
+            var s = document.getElementById("status").innerHTML = "NIGGA You Lose!";
+        }
+    }
+}
