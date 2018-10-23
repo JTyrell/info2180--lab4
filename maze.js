@@ -49,3 +49,38 @@ function overTheGardenWalls() { //cause why not call it that.
         }
     }
 }
+
+function startHover() {
+    var gGWalls = document.getElementsByClassName("boundary");
+
+    for (var i = 0; i < x.length; i++) {
+        gGWalls[i].style.backgroundColor = "#eeeeee";
+        if (gGWalls[i].style.backgroundColor != "red") {
+            var s = document.getElementById("status").innerHTML = "Move your mouse over the 'S' to begin.";
+        }
+    }
+}
+
+//Check if a nigga winning
+function overEnd() {
+    var gGWalls = document.getElementsByClassName("boundary");
+
+    for (var i = 0; i<x.length; i++) {
+        if (gGWalls[i].style.backgroundColor != "red") {
+            var s = document.getElementById("status").innerHTML = "You win!";
+        }
+    }
+}
+
+
+//to make sure the the Garden Walls are protected LOL and cheatproof
+function Cheatproof() {
+    var gGWalls= document.getElementsByClassName("boundary");
+
+    for (var i = 0; i<x.length; i++) {
+        gGWalls[i].style.backgroundColor = "red";
+        if (gGWalls[i].style.backgroundColor == "red") {
+            var s = document.getElementById("status").innerHTML = "NOPE.... but nice try...";
+        }
+    }
+}
